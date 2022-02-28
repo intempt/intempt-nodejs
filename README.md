@@ -1,12 +1,7 @@
 # Intempt - Nodejs SDK
 
-[Intempt](https://intempt.com/?utm_campaign=sdk&utm_medium=docs&utm_source=github) is an API-first platform for developers and marketers who are dissatisfied with high-maintenance personalization software. Our product is a personalization infrastructure through API and easy-to-use Console that provides a quicker way to build personalized applications. Unlike legacy personalization software we have:
-
-* an API-first SaaS platform that enables personalization of both digital and physical human activity
-* a management console that helps cut down maintenance and reporting overhead
-* an infrastructure to scale up user activity in no time
-
-This is a library to facilitate tracking of anonymous and logged-in user traffic on your server.
+[Intempt](https://intempt.com/?utm_campaign=sdk&utm_medium=docs&utm_source=github) Customer Data Platform built on Open Data Stack for the needs of SAAS and eCommerce companies focusing to grow their customer LTV.
+This is a library to facilitate tracking of anonymous and logged-in user traffic on your Node.js server.
 
 ## Contents:
 
