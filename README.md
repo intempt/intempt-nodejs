@@ -274,3 +274,25 @@ When you are passing type with a value of attributeId, then attributeIds becomes
 `Intempt.getAttributeValuesBySourceId(payload)`: Fetches all user-attributes by sourceId
 payload is an `Object`. payload required: sourceId: `String`, profile: `String`
 
+# COMPARISON 
+
+`Intempt.fetchComparison(payload)`: Fetches event counts based on a period of time.
+
+payload is an `Object`. payload required - groupBy: `String`, id1: `String`, dateFrom: `String`, dateTo: `String`, comparisonType: `String`. 
+
+Example in a nodejs application:
+
+```javascript
+    const result = await Intempt.fetchComparison({ 
+     groupBy: req.body.groupBy,
+     id1: req.body.id1, 
+     dateFrom: req.body.dateFrom, 
+     dateTo: req.body.dateTo, 
+     comparisonType: req.body.type
+    })
+    return res.status(200).json({
+        data: result
+    })
+```
+
+
