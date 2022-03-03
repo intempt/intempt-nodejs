@@ -1,6 +1,6 @@
 # Intempt - Nodejs SDK
 
-[Intempt](https://intempt.com/?utm_campaign=sdk&utm_medium=docs&utm_source=github) Customer Data Platform built on Open Data Stack for the needs of SAAS and eCommerce companies focusing to grow their customer LTV.
+[Intempt](https://intempt.com/?utm_campaign=sdk&utm_medium=docs&utm_source=github) is a Customer Data Platform built on Open Data Stack for the needs of SAAS and eCommerce companies focusing to grow their customer LTV.
 This is a library to facilitate tracking of anonymous and logged-in user traffic on your Node.js server.
 
 ## Contents:
