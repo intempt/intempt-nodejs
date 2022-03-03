@@ -10,11 +10,11 @@ This is a library to facilitate tracking of anonymous and logged-in user traffic
 * [3](https://github.com/intempt/intempt-nodejs#recording-events) - Recording Events
 * [4](https://github.com/intempt/intempt-nodejs#create-custom-collections) - Create Custom Collections
 * [5](https://github.com/intempt/intempt-nodejs#batching) - Batching
-* [6](https://github.com/intempt/intempt-nodejs#get-apis) - Get Apis
+* [6](https://github.com/intempt/intempt-nodejs#get-apis) - Get APIs
 
 ## Installation and Initialization
 
-Install our SDK which is also an npm package by running 
+Install our SDK which is an npm package by running 
 ```Javascript
     npm install intempt-nodejs-source
 ```
@@ -54,7 +54,7 @@ Our SDK provides an exported function to automatically track users. To track a u
 	Intempt.identify({profileId: profileId, user_identifier: user_identifier, account_identifier: account_identifier})
 ```
 
-`profileId` : This is a profile Identifier which is used to identify users. ```Note```: In your server, it is advisable to use the Id of your users as profileId. That way, it is always unique and you don't need to have a randomizer or genrator.
+`profileId` : This is a profile Identifier which is used to identify users. ```Note```: In your server, it is advisable to use the Id of your users as profileId. That way, it is always unique and you don't need to have a randomizer or generator.
 
 `user_identifier` : User identifier helps to identify users across all sources in your organization. This could be the user's email and so on. Eg. `example@example.com`
 
@@ -66,7 +66,7 @@ Our server-side API allows creation of any event type you might desire to be tra
 Custom collections allow you to bring custom data into your organization.
 
 # Create Custom Collections
-After creating a nodejs source, switch tabs to the schema and you should see a `profile` and `consents` collections already created. To start tracking custom events for our organization, after creating a [source](https://app.intempt.com/sources) you intend to use on your server, navigate to schema then use the schema Builder to create a collection with your personalized fields. Make sure to add a profileId field and set a profile identifier as one of its properties. [See intempt docs for keys and identifiers](https://dev.intempt.com/#keys-and-identifiers) to find out why.
+After creating a NodeJS source, switch tabs to the schema and you should see a `profile` and `consents` collections already created. To start tracking custom events for our organization, after creating a [source](https://app.intempt.com/sources) you intend to use on your server, navigate to schema then use the schema Builder to create a collection with your personalized fields. Make sure to add a profileId field and set a profile identifier as one of its properties. [See intempt docs for keys and identifiers](https://dev.intempt.com/#keys-and-identifiers) to find out why.
 
 Set up other custom field properties that match the data you plan to track.
 
@@ -77,7 +77,7 @@ Our SDK by default has a few exported functions for certain event tracking such 
     Intempt.recordEvent('COLLECTION_NAME', event);
 ```
 
-The COLLECTION_NAME refers to an event type. For example, if you wanted to track every time your server received a purchase request, you might call that collection "purchase". Then, when a purchase happens, you call track and pass in the purchase details.
+The COLLECTION_NAME refers to an event type. For example, if you wanted to track every time your server received a purchase request, you might call collection "purchase". Then, when a purchase happens, you call track and pass in the purchase details.
 
 ### Example
 
@@ -95,7 +95,7 @@ The COLLECTION_NAME refers to an event type. For example, if you wanted to track
 
 In the example above, we have a custom collection with name of `purchase`, then we have an object of key-value pairs. The Object passed into represent the fields we created while creating the collection. 
 
-`NB`: Data type sent should match data type set when creating the collection. For instance, We are sending a field `timestamp` which has a Data type of `number`, Sending data with a type of `string` instead of `number` will make this custom collection not get tracked
+`NB`: Data type sent should match data type set when creating the collection. For instance, We are sending a field `timestamp` which has a data type of `number`, Sending data with a type of `string` instead of `number` will make this custom collection not get tracked
 
 # Tracking Consents
 
@@ -136,7 +136,7 @@ Consents can contain as much as possible depending on your use case.
 
 Our libraries are built to support high-performance environments. That means it is safe to use our Node library on a web server that’s serving hundreds of requests per second.
 
-Every method you call does not result in an HTTP request, but is queued in memory instead. Messages are then flushed in batch in the background, which allows for much faster operation.
+Every method you call does not result in an HTTP request, but is queued in memory instead. Messages are then flushed in batch in the background, which allows to perform much faster operations.
 
 By default, our library will flush:
 The very first time it gets a message.
@@ -163,9 +163,10 @@ You can also flush on demand. For example, at the end of your program, you need 
 
 `Note`: For `flushAt` to work, you need to add one more event greater than the value of `flushAt`. For Instance, `{flushAt: 10}`. This means that for the flush to be triggered, you have to add `11 events` to memory. When this happens, it flushes the memory and adds the new event to memory making total events in memory `1`.
 
-# GET APIS
+# Get APIs
 Below is a detailed list of functions our SDK makes available to be used in your server.
-# EVENTS
+
+# Events
 
 `Intempt.getEventsByUser(payload)`: Fetches all Events by user.
 
@@ -179,7 +180,7 @@ When you are passing type with a value of eventId, then eventIds becomes `requir
 `Intempt.getEventsbyMasterId(masterid)`: Fetches all Events by masterId
 
 
-`Intempt.getEventsByProfileId(profileId, config)`; Fetches all Events by profileId
+`Intempt.getEventsByProfileId(profileId, config)`: Fetches all Events by profileId
 
 `Intempt.getEventsBySourceId(sourceId, profile, config)`: Fetches all Events by sourceId
 
@@ -230,7 +231,7 @@ When you are passing type with a value of metricName, then metricNames becomes `
 payload is an `Object`. payload required: sourceId: `String`, profile: `String`
 
 
-# USERS
+# Users
 `Intempt.getUsersByMasterId(masterId)`: Fetches all users by masterId
 
 `Intempt.getUsersByUser(user)`: Fetches all users by user
@@ -256,7 +257,7 @@ payload is an `Object`. payload required - sourceId: `String`, profile: `String`
 `getUsers()`: Fetches all users without any filter.
 
 
-# USER-ATTRIBUTES
+# User attributes
 
 `Intempt.getAttributeValuesByMasterId(masterId)`: Fetches all user-attributes by masterId
 
