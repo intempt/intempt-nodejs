@@ -40,10 +40,12 @@ SDK capabilities:
 - Display experiments
 - Display experiences (personalization campaigns)
 
-Refer to the SDK documentation for full setup:
-[Node.js SDK](https://help.intempt.com/docs/nodejs-sdk)
+# Documentation
+
+Refer to the SDK documentation for full setup:[Node.js SDK](https://help.intempt.com/docs/nodejs-sdk)
 
 # About Intempt
 
 Intempt is a GrowthOS -  a unified marketing workspace where you turn audiences into revenue with AI predictions, real-time analytics, segmentation, journey automation, web personalization, and A/B testing.
+
 Check out more at [intempt.com](https://www.intempt.com)
